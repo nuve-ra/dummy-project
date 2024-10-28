@@ -27,10 +27,10 @@ const port = process.env.PORT || 3000; // Use Vercel's port
 
 // Middleware
 server.use(express.json());
-server.use(cors({ origin: 'https://blog-it-out.netlify.app' }));
+server.use(cors({ origin: 'https://localhost:5173 }));
 
 // Connect to MongoDB
-mongoose.connect(process.env.DB_LOCATION, {
+mongoose.connect(process.env.DB_LOCATION || , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
